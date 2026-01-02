@@ -233,31 +233,35 @@ Whether it’s inspired by anime, science fiction, or real-world problems, I enj
 
 <div class="rotate-overlay" id="rotateOverlay">
   <div class="rotate-box">
-    <i class="fas fa-rotate"></i>
+    <i class="fas fa-mobile-screen"></i>
     <p>Rotate your device for a better experience</p>
-    <button onclick="hideRotate()">Continue Anyway</button>
+    <button id="continueBtn">Continue Anyway</button>
   </div>
 </div>
 
-  <script>
-function checkOrientation() {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("rotateOverlay");
-  if (window.innerWidth < 768 && window.innerHeight > window.innerWidth) {
-    overlay.style.display = "flex";
-  } else {
-    overlay.style.display = "none";
+  const btn = document.getElementById("continueBtn");
+
+  function checkOrientation() {
+    if (window.innerWidth < 768 && window.innerHeight > window.innerWidth) {
+      overlay.style.display = "flex";
+    } else {
+      overlay.style.display = "none";
+    }
   }
-}
 
-function hideRotate() {
-  document.getElementById("rotateOverlay").style.display = "none";
-}
+  btn.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
 
-window.addEventListener("resize", checkOrientation);
-window.addEventListener("load", checkOrientation);
+  window.addEventListener("resize", checkOrientation);
+  checkOrientation();
+});
 </script>
+
 
 </body>
 </html>
  
-
