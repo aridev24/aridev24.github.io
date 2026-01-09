@@ -377,17 +377,217 @@ body {
   color: #aaa;
   background: #0b0b0b;
 }
+/*
+    The following are additions to enhance mobile responsiveness.
+*/
+
+/* ----------------------------------------- */
+/*           General Mobile Adjustments      */
+/* ----------------------------------------- */
+
+/* Apply some basic styling to the body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6;
+    color: #f0f0f0; 
+    background-color: #1a1a2e; 
+    box-sizing: border-box; 
+}
+
+/* Adjust common section paddings */
+section {
+    padding: 60px 0; 
+}
+
+
+/* ------------------------------------------ */
+/*           Responsive Media Queries         */
+/* ------------------------------------------ */
 
 @media (max-width: 768px) {
-  .project-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-  }
+    /* Styles for screens up to 768px wide */
 
-  .project-card {
-    max-width: 420px;
-    width: 100%;
-  }
+    body {
+        padding: 0 15px; 
+        font-size: 16px;
+    }
+
+    /* Headings adjustments */
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .subtitle {
+        font-size: 1em; 
+    }
+    .section-title {
+        font-size: 2em; 
+    }
+
+    /* Social Bar */
+    .social-bar {
+        position: static; 
+        display: flex;
+        justify-content: center; 
+        padding: 15px 0;
+        gap: 15px; 
+    }
+    .social-bar a img {
+        width: 35px; 
+        height: 35px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 40px 15px; 
+        text-align: center; 
+    }
+    .pfp-wrap img {
+        max-width: 150px; 
+        height: auto;
+    }
+    .hero .buttons {
+        flex-direction: column;
+        gap: 15px; 
+        display: flex; 
+        align-items: center; 
+        margin-top: 25px; 
+    }
+    .hero .btn {
+        width: 80%; 
+        max-width: 300px;
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    /* Projects Section - Grid */
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+        gap: 30px; 
+    }
+    .project-card {
+        padding: 20px; 
+    }
+    .project-card .icon-wrap {
+        margin-bottom: 15px; 
+    }
+    .project-card .icon-wrap img {
+        width: 60px;
+        height: 60px;
+    }
+    .project-card h3 {
+        font-size: 1.5em;
+    }
+    .project-card p {
+        font-size: 0.95em;
+    }
+    .project-card .tags span {
+        font-size: 0.8em;
+        padding: 4px 8px;
+    }
+    .project-card .card-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .project-card .btn.small {
+        width: 90%;
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .view-all-wrapper {
+        margin-top: 40px;
+    }
+
+    /* About Me Section */
+    .glass {
+        padding: 30px 15px; 
+    }
+    .glass h1 {
+        font-size: 2em; 
+    }
+    .glass h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px; 
+    }
+    .glass h2 img {
+        width: 28px; 
+        height: 28px;
+        margin-right: 10px;
+    }
+    ul {
+        padding-left: 20px;
+        margin-bottom: 25px; 
+    }
+    li {
+        margin-bottom: 8px;
+        font-size: 0.95em;
+    }
+    p {
+        font-size: 0.95em;
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 40px 15px; 
+    }
+    .contact-subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; 
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+        box-sizing: border-box; 
+    }
+    .contact-form textarea {
+        min-height: 120px; 
+    }
+    .contact-form button.btn {
+        width: 100%; 
+        max-width: 300px; 
+        align-self: center;
+        padding: 15px 25px;
+        font-size: 1.1em;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 20px 15px;
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+}
+
+/* Further adjustments for very small screens
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .hero .btn {
+        width: 95%; 
+    }
+    .project-card .btn.small {
+        width: 95%;
+    }
+    .social-bar a img {
+        width: 30px;
+        height: 30px;
+    }
 }
